@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猪婆</title>
+    <link rel="stylesheet" href="tolls.css"  type="text/css" >
+</head>
+<body>
+<a class="youi" href="hello.html" target="_blank"   > 我们与故事</a>
+    <a class="uyo"  href="addhet.html"  target="_blank">故事于我们</a>
+
+<script type="text/javascript">
+      const  buttons =document.querySelectorAll('a');
+      buttons.forEach(btn  => {
+          btn.addEventListener('click', function(e) {
+
+              let x = e.clientX - e.target.offsetLeft;
+              let y = e.clientY - e.target.offsetTop;
+
+              let ripples = document.createElement('span');
+              ripples.style.left = x + 'px';
+              ripples.style.top = y + 'px';
+              this.appendChild(ripples);
+
+              setTimeout(() => {
+                  ripples.remove()
+              },1000);
+          })
+      })
+
+</script>
+
+</body>
+
+</html>
