@@ -1,0 +1,115 @@
+/*四面立体 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 我是肥肥的詹小君</title>
+    <!--父相子绝-->
+    <link href="so.css" rel="stylesheet" type="text/css">
+    <style>
+        /*ID选择器：去找IDb*/
+        /*class选择器*/
+        .container{
+            position: relative;/*相对定位*/
+        }
+        .stage{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            perspective: 2000px;
+            transform-style: preserve-3d;/* 后代标签为3d*/
+        }
+        .stage .control{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;/* 后代标签为3d*/
+            transform:  translateZ(0px) rotateY(50deg) rotateZ(10deg);
+            animation: rotate 20s ease infinite;
+        }
+        .stage .control .imgWrap{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transform-style: preserve-3d;/* 后代标签为3d*/
+        }
+        .stage .control .imgWrap .img{
+            position: absolute;
+            font-size: 120px;
+            width: 400px;
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            transform-origin: 50% 50% 0px;
+            border: 1px solid;
+            opacity: 0.7;
+        }
+        .stage .control .imgWrap .img1{
+            transform: rotateY(125deg) translateZ(200px);
+            background: #ccc;
+
+        }
+        .stage .control .imgWrap .img2{
+            transform: rotateY(215deg) translateZ(200px);
+            background: #333;
+
+        }
+        .stage .control .imgWrap .img3{
+            transform: rotateY(305deg) translateZ(200px);
+            background: #777;
+        }
+        .stage .control .imgWrap .img4{
+            transform: rotateY(395deg) translateZ(200px);
+            background: #888122;
+        }
+        /* css3t规则*/
+        @keyframes rotate{/*动画20s执行时间内，做的动画效果*/
+            0%{
+                transform:  translateZ(-2000px) rotateY(0deg) rotateZ(20deg);
+            }
+            50%{
+                transform:  translateZ(700px) rotateY(-360deg) rotateZ(-10deg);
+            }
+            0%{
+                transform:  translateZ(-2000px)  rotateY(-720deg)  rotateZ(20deg);
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div  class="stage">
+        <!--控制台-->
+        <div class="control">
+            <!--四个面图像层-->
+            <div class="imgWrap">
+                <!--DIV 盒子模型，没有意义，可以对其布局-->
+                <div class="img img1"><text>1</text></div>
+                <div class="img img2"><text>2</text></div>
+                <div class="img img3"><text>3</text></div>
+                <div class="img img4"><text>4</text></div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+</body>
+</html>
